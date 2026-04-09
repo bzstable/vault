@@ -1,0 +1,119 @@
+/* ── Keyframes ── */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 var(--accent-muted);
+  }
+  50% {
+    box-shadow: 0 0 20px 4px var(--accent-muted);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes ringProgress {
+  from { stroke-dashoffset: var(--ring-circumference); }
+  to { stroke-dashoffset: var(--ring-offset); }
+}
+
+@keyframes barGrow {
+  from { width: 0; }
+  to { width: var(--bar-width); }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ── Animation Utilities ── */
+.anim-fade-up {
+  animation: fadeSlideUp var(--duration-slow) var(--ease-out) both;
+}
+
+.anim-fade-down {
+  animation: fadeSlideDown var(--duration-slow) var(--ease-out) both;
+}
+
+.anim-scale-in {
+  animation: scaleIn var(--duration-slow) var(--ease-out) both;
+}
+
+.anim-fade-in {
+  animation: fadeIn var(--duration-normal) var(--ease-out) both;
+}
+
+.anim-slide-right {
+  animation: slideInRight var(--duration-slow) var(--ease-out) both;
+}
+
+/* Stagger delays */
+.delay-1 { animation-delay: 50ms; }
+.delay-2 { animation-delay: 100ms; }
+.delay-3 { animation-delay: 150ms; }
+.delay-4 { animation-delay: 200ms; }
+.delay-5 { animation-delay: 250ms; }
+.delay-6 { animation-delay: 300ms; }
+.delay-7 { animation-delay: 350ms; }
+.delay-8 { animation-delay: 400ms; }
+
+/* ── Transition Utilities ── */
+.transition-all {
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.hover-lift {
+  transition: transform var(--duration-normal) var(--ease-out),
+              box-shadow var(--duration-normal) var(--ease-out);
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
